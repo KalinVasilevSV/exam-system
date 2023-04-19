@@ -30,6 +30,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+<!--    Maps it to the ServletContext root-->
     <servlet-mapping>
         <servlet-name>exam-system-dispatcher</servlet-name>
         <url-pattern>/*</url-pattern>
