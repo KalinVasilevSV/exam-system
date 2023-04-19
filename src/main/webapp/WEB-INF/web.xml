@@ -15,7 +15,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>org.studyprojects.examsystem.config</param-value>
+        <param-value>org.studyprojects.examsystem</param-value>
     </context-param>
 
     <servlet>
@@ -32,7 +32,7 @@
 
     <servlet-mapping>
         <servlet-name>exam-system-dispatcher</servlet-name>
-        <url-pattern>/exam-system</url-pattern>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
     <error-page>
