@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+            href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css"/>
+    <title>Admin (number)</title>
+</head>
+<header th:replace="/fragments/commons::navigation"></header>
+
+<section class="bg-dark text-light p-5 p-lg-1 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <br>
+                <h1>Users <span class="text-warning"> panel </span></h1>
+                <p class="lead my-4">View all users in the system.</p>
+                <p class="lead my-4">To add a new user press "Add" button at the table.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a class="btn btn-primary" th:href="@{/}">Back</a>
+<br>
+<a class="btn btn-primary" th:href="@{/users/add}">Add</a>
+
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Username</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">FacNo</th>
+        <th>View</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="user : ${users}">
+        <tr>
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getUsername()}"></td>
+            <td th:text="${user.getFirstName()}"></td>
+            <td th:text="${user.getLastName()}"></td>
+            <td th:text="${user.getFacNo()}"></td>
+            <td><a class="btn btn-primary" th:href="@{/users/{id}/details(id=${user.getId()})}">View</a></td>
+            <td><a class="btn btn-primary" th:href="@{/users/{id}/delete(id=${user.getId()})}">Delete</a></td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+<body>
+
+</body>
+</html>

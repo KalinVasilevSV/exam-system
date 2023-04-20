@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <title>Admin (d)number</title>
+</head>
+<body>
+<header th:replace="/fragments/commons::navigation"></header>
+
+
+<section
+        class="bg-dark text-light p-5 p-lg-1 pt-lg-5 text-center text-sm-start"
+>
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <br>
+                <h1>Create new <span class="text-warning"> exam here </span></h1>
+                <p class="lead my-4">
+                    Some random text bla bla
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<form>
+    <br>
+    <h1 align="center">Taken exams</h1>
+
+
+
+</form>
+
+
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Exam number</th>
+        <th scope="col">Status</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>121612519</td>
+        <td>FINALIZED</td>
+
+    </tr>
+
+    </tbody>
+
+</table>
+<div align="center">
+    <button type="button" class="btn btn-primary">Refresh</button>
+</div>
+<br>
+</body>
+</html>
